@@ -14,14 +14,24 @@ namespace Bagel_and_Coffee_Shop
             InitializeComponent();
         }
 
+        private void ResetLabels()
+        {
+            this.lblSubtotal.ForeColor = System.Drawing.Color.FromArgb(53, 26, 0);
+            this.lblTax.ForeColor = System.Drawing.Color.FromArgb(53, 26, 0);
+            this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(53, 26, 0);
+        }
+
+
         private void radWhite_CheckedChanged(object sender, EventArgs e)
         {
             this.Bagel = "White";
+            ResetLabels();
         }
 
         private void radWheat_CheckedChanged(object sender, EventArgs e)
         {
             this.Bagel = "Whole wheat";
+            ResetLabels();
         }
 
         private void addTopping(String topping, String toggle)
@@ -34,6 +44,7 @@ namespace Bagel_and_Coffee_Shop
             {
                 this.Toppings.Remove(topping);
             }
+            ResetLabels();
         }
 
         private void chkCreamCheese_CheckedChanged(object sender, EventArgs e)
@@ -67,23 +78,27 @@ namespace Bagel_and_Coffee_Shop
         private void radNoCoffee_CheckedChanged(object sender, EventArgs e)
         {
             this.Coffee = "NoCoffee";
+            ResetLabels();
         }
 
         private void radRegCoffee_CheckedChanged(object sender, EventArgs e)
         {
             this.Coffee = "RegCoffee";
+            ResetLabels();
 
         }
 
         private void radCappuccino_CheckedChanged(object sender, EventArgs e)
         {
             this.Coffee = "Cappuccino";
+            ResetLabels();
 
         }
 
         private void radCafeAuLait_CheckedChanged(object sender, EventArgs e)
         {
             this.Coffee = "CafeAuLait";
+            ResetLabels();
 
         }
 
@@ -157,6 +172,10 @@ namespace Bagel_and_Coffee_Shop
             this.lblSubtotal.Text = "$" + subtotal.ToString("0.00");
             this.lblTax.Text = "$" + tax.ToString("0.00");
             this.lblTotal.Text = "$" + total.ToString("0.00");
+
+            this.lblSubtotal.ForeColor = System.Drawing.Color.Green;
+            this.lblTax.ForeColor = System.Drawing.Color.Green;
+            this.lblTotal.ForeColor = System.Drawing.Color.Green;
         }
 
         private void ResetBagels()
@@ -194,6 +213,7 @@ namespace Bagel_and_Coffee_Shop
             ResetToppings();
             ResetCoffee();
             ResetPrice();
+            ResetLabels();
         }
     }
 }
