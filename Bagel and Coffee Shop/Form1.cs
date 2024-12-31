@@ -214,6 +214,7 @@ namespace Bagel_and_Coffee_Shop
             ResetCoffee();
             ResetPrice();
             ResetLabels();
+            radWhite.Focus();
         }
     }
 }
